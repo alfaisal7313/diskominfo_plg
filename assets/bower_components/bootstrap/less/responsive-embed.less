@@ -1,0 +1,24 @@
+// --------------------------------------------------------------------
+
+	/**
+	 * Insert ID
+	 * 
+	 * @access	public
+	 * @return	integer
+	 */
+	function insert_id($name=NULL)
+	{
+		//Convenience method for postgres insertid
+		if (strpos($this->hostname, 'pgsql') !== FALSE)
+		{
+			$v = $this->_version();
+
+			$table	= func_num_args() > 0 ? func_get_arg(0) : NULL;
+
+			if ($table == NULL && $v >= '8.1')
+			{
+				$sql='SELECT LASTVAL() as ins_id';
+			}
+			$query = $this->query($sql);
+			$row = $query->row();
+			return $row->i

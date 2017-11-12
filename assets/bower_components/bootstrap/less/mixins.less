@@ -1,0 +1,53 @@
+this->_like_escape_chr);
+			return FALSE; // not currently supported
+		}
+
+		return $sql;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Show column query
+	 *
+	 * Generates a platform-specific query string so that the column names can be fetched
+	 *
+	 * @access	public
+	 * @param	string	the table name
+	 * @return	string
+	 */
+	function _list_columns($table = '')
+	{
+		return "SHOW COLUMNS FROM ".$table;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Field data query
+	 *
+	 * Generates a platform-specific query so that the column data can be retrieved
+	 *
+	 * @access	public
+	 * @param	string	the table name
+	 * @return	object
+	 */
+	function _field_data($table)
+	{
+		return "SELECT TOP 1 FROM ".$table;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * The error message string
+	 *
+	 * @access	private
+	 * @return	string
+	 */
+	function _error_message()
+	{
+		return odbc_errormsg($this->conn_id);
+	}
+
+	// ---------------------------------------------------------------

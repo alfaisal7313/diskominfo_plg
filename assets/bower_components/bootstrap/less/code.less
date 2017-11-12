@@ -1,0 +1,56 @@
+derby clause
+	 * @param	array	the limit clause
+	 * @return	string
+	 */
+	protected function _update($table, $values, $where, $orderby = array(), $limit = FALSE)
+	{
+		foreach ($values as $key => $val)
+		{
+			$valstr[] = $key." = ".$val;
+		}
+
+		$limit = ( ! $limit) ? '' : ' LIMIT '.$limit;
+
+		$orderby = (count($orderby) >= 1)?' ORDER BY '.implode(", ", $orderby):'';
+
+		$sql = "UPDATE ".$table." SET ".implode(', ', $valstr);
+
+		$sql .= ($where != '' AND count($where) >=1) ? " WHERE ".implode(" ", $where) : '';
+
+		$sql .= $orderby.$limit;
+
+		return $sql;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Truncate statement
+	 *
+	 * Generates a platform-specific truncate string from the supplied data
+	 * If the database does not support the truncate() command
+	 * This function maps to "DELETE FROM table"
+	 *
+	 * @access	protected
+	 * @param	string	the table name
+	 * @return	string
+	 */
+	protected function _truncate($table)
+	{
+		return "TRUNCATE TABLE ".$table;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Delete statement
+	 *
+	 * Generates a platform-specific delete string from the supplied data
+	 *
+	 * @access	protected
+	 * @param	string	the table name
+	 * @param	array	the where clause
+	 * @param	string	the limit clause
+	 * @return	string
+	 */
+	protected 

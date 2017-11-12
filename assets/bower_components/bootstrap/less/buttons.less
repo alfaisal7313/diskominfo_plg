@@ -1,0 +1,149 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.1.6 or newer
+ *
+ * @package		CodeIgniter
+ * @author		ExpressionEngine Dev Team
+ * @copyright   Copyright (c) 2008 - 2011, EllisLab, Inc.
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 1.0
+ * @filesource
+ */
+
+// ------------------------------------------------------------------------
+
+/**
+ * oci8 Database Adapter Class
+ *
+ * Note: _DB is an extender class that the app controller
+ * creates dynamically based on whether the active record
+ * class is being used or not.
+ *
+ * @package		CodeIgniter
+ * @subpackage  Drivers
+ * @category	Database
+ * @author		ExpressionEngine Dev Team
+ * @link		http://codeigniter.com/user_guide/database/
+ */
+
+/**
+ * oci8 Database Adapter Class
+ *
+ * This is a modification of the DB_driver class to
+ * permit access to oracle databases
+ *
+ * @author	  Kelly McArdle
+ *
+ */
+
+class CI_DB_oci8_driver extends CI_DB {
+
+	var $dbdriver = 'oci8';
+
+	// The character used for excaping
+	var $_escape_char = '"';
+
+	// clause and character used for LIKE escape sequences
+	var $_like_escape_str = " escape '%s' ";
+	var $_like_escape_chr = '!';
+
+	/**
+	 * The syntax to count rows is slightly different across different
+	 * database engines, so this string appears in each driver and is
+	 * used for the count_all() and count_all_results() functions.
+	 */
+	var $_count_string = "SELECT COUNT(1) AS ";
+	var $_random_keyword = ' ASC'; // not currently supported
+
+	// Set "auto commit" by default
+	var $_commit = OCI_COMMIT_ON_SUCCESS;
+
+	// need to track statement id and cursor id
+	var $stmt_id;
+	var $curs_id;
+
+	// if we use a limit, we will add a field that will
+	// throw off num_fields later
+	var $limit_used;
+
+	/**
+	 * Non-persistent database connection
+	 *
+	 * @access  private called by the base class
+	 * @return  resource
+	 */
+	public function db_connect()
+	{
+		return @oci_connect($this->username, $this->password, $this->hostname, $this->char_set);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Persistent database connection
+	 *
+	 * @access  private called by the base class
+	 * @return  resource
+	 */
+	public function db_pconnect()
+	{
+		return @oci_pconnect($this->username, $this->password, $this->hostname, $this->char_set);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Reconnect
+	 *
+	 * Keep / reestablish the db connection if no queries have been
+	 * sent for a length of time exceeding the server's idle timeout
+	 *
+	 * @access	public
+	 * @return	void
+	 */
+	public function reconnect()
+	{
+		// not implemented in oracle
+		return;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Select the database
+	 *
+	 * @access  private called by the base class
+	 * @return  resource
+	 */
+	public function db_select()
+	{
+		// Not in Oracle - schemas are actually usernames
+		return TRUE;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Set client character set
+	 *
+	 * @access	public
+	 * @param	string
+	 * @param	string
+	 * @return	resource
+	 */
+	public function db_set_charset($charset, $collation)
+	{
+		// @todo - add support if needed
+		return TRUE;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Version number query string
+	 *
+	 * @access  protected
+	 * @return  
