@@ -17,7 +17,7 @@
                           <th>#</th>
                           <th>Judul</th>
                           <th>Tanggal</th>
-                          <th>kategori</th>
+                          <th>kategori</th> -->
                           <th>Gambar</th>
                           <th>Action</th>
                         </tr>
