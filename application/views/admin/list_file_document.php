@@ -14,11 +14,11 @@
                 <table id="mytable" class="table table-bordered table-striped" style="width:100%;">
                     <thead>
                         <tr>
-                          <th>#</th>
-                          <th>Judul</th>
+                          <th>No</th>
+                          <th>Judul File Document</th>
                           <th>Keterangan</th>
                           <th>Tanggal</th>
-                          <th>File</th>
+                          <th>File Document</th>
                           <th>Action</th>
                         </tr>
                         <tbody>

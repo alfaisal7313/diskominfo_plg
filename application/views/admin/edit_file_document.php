@@ -12,7 +12,7 @@
                             <div class="box-body">
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Tanggal</label>
-                                    <div class="col-sm-7">
+                                    <div class="col-sm-6">
                                         <div class="input-group date ml-2">
                                           <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
@@ -20,7 +20,7 @@
                                           <input type="text" name="tanggal" class="form-control" value="<?php date_default_timezone_set('Asia/Jakarta'); echo isset($_GET['tanggal'])?$tanggal:date('Y-m-d'); ?>" >
                                         </div>
                                     </div>
-                                    <label class="col-sm-1 control-label">Id File</label>
+                                    <label class="col-sm-2 control-label">Id File Document</label>
                                     <div class="col-sm-2">
                                         <div class="input-group date ml-2">
                                           <div class="input-group-addon">
@@ -32,25 +32,25 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="tiga" class="col-sm-2 control-label">Judul File*</label>
+                                    <label for="tiga" class="col-sm-2 control-label">Judul File Document*</label>
                                     <div class="col-sm-10">
                                         <div class="input-group date ml-2">
                                           <div class="input-group-addon">
                                             <i class="fa fa-pencil-square-o"></i>
                                           </div>
-                                          <input type="text" name="judul_document" class="form-control" placeholder="Judul File" value="<?php echo $document->judul_document ?>" required oninvalid="this.setCustomValidity('Judul jangan kosong')" oninput="setCustomValidity('')">
+                                          <input type="text" name="judul_document" class="form-control" placeholder="Judul File Document" value="<?php echo $document->judul_document ?>" required oninvalid="this.setCustomValidity('Judul jangan kosong')" oninput="setCustomValidity('')">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="tiga" class="col-sm-2 control-label">Keterangan File</label>
+                                    <label for="tiga" class="col-sm-2 control-label">Keterangan File Document</label>
                                     <div class="col-sm-10">
                                         <div class="input-group date ml-2">
                                           <div class="input-group-addon">
                                             <i class="fa  fa-bookmark"></i>
                                           </div>
-                                          <textarea type="text" name="keterangan" class="form-control" placeholder="Keterangan File" rows="2"><?php echo $document->keterangan ?></textarea>
+                                          <textarea type="text" name="keterangan" class="form-control" placeholder="Keterangan File Document" rows="2"><?php echo $document->keterangan ?></textarea>
                                         </div>
                                     </div>
                                 </div>

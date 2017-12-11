@@ -23,7 +23,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo" style="margin-bottom: 20px!imiportant;">
-    <a href="<?php echo base_url('login'); ?>"><img src="<?php echo base_url(); ?>/assets/img/logo.png" style="max-width:50px; margin-bottom:10px;";> <b>Diskominfo</b></a>
+    <a href="<?php echo base_url('login'); ?>"><img src="<?php echo base_url(); ?>/assets/img/logo.png" style="max-width:60px; margin-top: 10%;"> <h3><b>Diskominfo Kota Palembang</b></h3></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -49,7 +49,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4 pull-right" style="margin-top: 5px;">
-          <button type="submit" value="Login" class="btn btn-primary btn-block btn-flat ">Sign In</button>
+          <button type="submit" value="Login" class="btn btn-primary btn-block btn-flat ">Login</button>
         </div>
         <!-- /.col -->
       </div>

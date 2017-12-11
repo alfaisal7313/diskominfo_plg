@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Admin | <?php echo $title ?></title>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="<?php echo base_url(); ?>assets/img/logo.png">
+  <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="<?php echo base_url(); ?>assets/img/logo.png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -34,39 +34,39 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <style media="screen">
   .small-box h3 {
-      font-size: 30px !important;
-      margin: 0 0 0px 0 !important;
+    font-size: 30px !important;
+    margin: 0 0 0px 0 !important;
   }
-  </style>
+</style>
 </head>
 <body class="hold-transition sidebar-mini skin-blue" style="margin: 0px !important">
-<div class="wrapper">
+  <div class="wrapper">
 
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="<?php echo base_url('admin/dashbord/'); ?>" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>DM</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>&nbsp;Diskominfo</span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="<?php echo base_url('admin/dashbord/'); ?>" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>A</b>DM</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Admin</b>&nbsp;Diskominfo</span>
       </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
 
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- User Account: style can be found in dropdown.less -->
-          <li>
-            <div style="color: white;padding: 15px 10px;line-height: 20px;">
-              <span class="hidden-xs"><i class="glyphicon glyphicon-time">
-              </i>&nbsp;
-              <span id="clockDisplay"></span>&nbsp;<?php date_default_timezone_set('Asia/Jakarta');
-              echo date('/ D d-m-Y'); ?>
-            </span>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- User Account: style can be found in dropdown.less -->
+            <li>
+              <div style="color: white;padding: 15px 10px;line-height: 20px;">
+                <span class="hidden-xs"><i class="glyphicon glyphicon-time">
+                </i>&nbsp;
+                <span id="clockDisplay"></span>&nbsp;<?php date_default_timezone_set('Asia/Jakarta');
+                echo date('/ D d-m-Y'); ?>
+              </span>
             </div>
           </li>
           <li class="dropdown user user-menu">
@@ -85,7 +85,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="<?php echo base_url('admin/dashbord/profile/'.$this->session->userdata("id_user")); ?>" class="btn btn-default btn-flat">Profile</a>
+                  <a href="<?php echo base_url('admin/profile/editProfile/'.$this->session->userdata("id_user")); ?>" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="<?php echo base_url('login/logout'); ?>" class="btn btn-default btn-flat">Logout</a>
@@ -131,9 +131,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('admin/slide/upload_slide'); ?>"><i class="fa fa-pencil-square-o"></i> Buat Slide</a></li>
-            <li><a href="<?php echo base_url('admin/slide/list_slide'); ?>"><i class="fa fa-list" aria-hidden="true"></i> List Slide</a></li>
-            </ul>
+            <li><a href="<?php echo base_url('admin/slideshow/upload_slide'); ?>"><i class="fa fa-pencil-square-o"></i> Buat Slideshow</a></li>
+            <li><a href="<?php echo base_url('admin/slideshow/list_slide'); ?>"><i class="fa fa-list" aria-hidden="true"></i> List Slideshow</a></li>
+          </ul>
         </li>
 
         <li class="treeview">
@@ -146,7 +146,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('admin/berita/form_berita'); ?>"><i class="fa fa-pencil-square-o"></i> Buat Berita</a></li>
             <li><a href="<?php echo base_url('admin/berita/list_berita'); ?>"><i class="fa fa-list" aria-hidden="true"></i> List Berita</a></li>
-            </ul>
+          </ul>
         </li>
 
         <li class="treeview">
@@ -184,7 +184,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-file-text"></i> <span>File</span>
+            <i class="fa fa-file-text"></i> <span>File Document</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -192,7 +192,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('admin/filedocument/upload_file_document'); ?>"><i class="fa fa-upload"></i> Upload File Document</a></li>
             <li><a href="<?php echo base_url('admin/filedocument/list_file_document'); ?>"><i class="fa fa-list" aria-hidden="true"></i> List File Document</a></li>
-            </ul>
+          </ul>
         </li>
 
         <?php if ($this->session->userdata("id_kategori_user") == "1") {
@@ -222,27 +222,27 @@
     <!-- /.sidebar -->
   </aside>
   <script type="text/javascript" language="javascript">
-  function renderTime(){
-   var currentTime = new Date();
-   var h = currentTime.getHours();
-   var m = currentTime.getMinutes();
-   var s = currentTime.getSeconds();
-   var am_pm = currentTime.getHours() >= 12 ? "PM" : "AM";
-   if (h == 0){
-    h = 24;
-     }
-     if (h < 10){
+    function renderTime(){
+     var currentTime = new Date();
+     var h = currentTime.getHours();
+     var m = currentTime.getMinutes();
+     var s = currentTime.getSeconds();
+     var am_pm = currentTime.getHours() >= 12 ? "PM" : "AM";
+     if (h == 0){
+      h = 24;
+    }
+    if (h < 10){
       h = "0" + h;
-      }
-      if (m < 10){
+    }
+    if (m < 10){
       m = "0" + m;
-      }
-      if (s < 10){
+    }
+    if (s < 10){
       s = "0" + s;
-      }
-   var myClock = document.getElementById('clockDisplay');
-   myClock.textContent = h + " : " + m + " : " + s + " " + am_pm;
-   setTimeout ('renderTime()',1000);
-   }
-   renderTime();
-  </script>
+    }
+    var myClock = document.getElementById('clockDisplay');
+    myClock.textContent = h + " : " + m + " : " + s + " " + am_pm;
+    setTimeout ('renderTime()',1000);
+  }
+  renderTime();
+</script>

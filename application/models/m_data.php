@@ -303,7 +303,6 @@ class M_data extends CI_Model{
 		$this->db->update($table,$data,$where);
 	}
 
-
 	//hitung jumlah total file
     function total_record_document() {
         $this->db->from('document');

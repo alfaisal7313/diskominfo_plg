@@ -5,7 +5,7 @@
                 <div class="col-md-12">
                      <div class="box box-info">
                       <div class="box-header with-border">
-                          <h3 class="box-title">Form Upload File</h3>
+                          <h3 class="box-title">Form Upload File Document</h3>
                       </div>
                       <form action="<?php echo base_url(). 'admin/filedocument/tambah_file_document'; ?>" class="form-horizontal" method="post" enctype="multipart/form-data" style="padding: 30px;">
                           <div class="box-body">
@@ -22,25 +22,25 @@
                               </div>
 
                               <div class="form-group">
-                                  <label for="tiga" class="col-sm-2 control-label">Judul File*</label>
+                                  <label for="tiga" class="col-sm-2 control-label">Judul File Document*</label>
                                   <div class="col-sm-10">
                                       <div class="input-group date ml-2">
                                         <div class="input-group-addon">
                                           <i class="fa fa-pencil-square-o"></i>
                                         </div>
-                                        <input type="text" name="judul_document" class="form-control" placeholder="Judul File" required oninvalid="this.setCustomValidity('Silahkan isi judul file')" oninput="setCustomValidity('')">
+                                        <input type="text" name="judul_document" class="form-control" placeholder="Judul File Document" required oninvalid="this.setCustomValidity('Silahkan isi judul file')" oninput="setCustomValidity('')">
                                       </div>
                                   </div>
                               </div>
 
                               <div class="form-group">
-                                  <label for="tiga" class="col-sm-2 control-label">Keterangan File</label>
+                                  <label for="tiga" class="col-sm-2 control-label">Keterangan File Document</label>
                                   <div class="col-sm-10">
                                       <div class="input-group date ml-2">
                                         <div class="input-group-addon">
                                           <i class="fa  fa-bookmark"></i>
                                         </div>
-                                        <textarea type="text" name="keterangan" class="form-control" placeholder="Keterangan File" rows="2">
+                                        <textarea type="text" name="keterangan" class="form-control" placeholder="Keterangan File Document" rows="2">
                                         </textarea>
                                       </div>
                                   </div>

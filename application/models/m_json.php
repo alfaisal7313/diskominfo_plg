@@ -7,11 +7,11 @@ class M_json extends CI_Model {
     }
 
     //json berita
-    function json_berita() {
+    function jsonBerita() {
         $this->datatables->select('berita.id_berita as ID,berita.judul as judul, berita.tanggal as tanggal,berita.img_berita as gambar, kategori_berita.nama_kategori_berita as kategori');
         $this->datatables->from('berita');
-        $this->db->join('kategori_berita', 'berita.id_kategori_berita = kategori_berita.id_kategori_berita', 'left');
-      	$this->datatables->add_column('view_image','<img src="'.site_url('img/image_berita/$1').'" width=150 height="100">','gambar');
+        $this->datatables->join('kategori_berita', 'berita.id_kategori_berita = kategori_berita.id_kategori_berita', 'left');
+        $this->datatables->add_column('view_image','<img src="'.site_url('img/image_berita/$1').'" width=150 height="100">','gambar');
         $this->datatables->add_column('view', '<a href="edit_berita/$1"><button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i></button></a>
                                               <a href="hapus_berita/$1"onclick="javascript:return confirm(\'Apakah anda yakin ingin menghapus data tersebut?\');"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>', 'ID');
         return $this->datatables->generate();
@@ -19,10 +19,10 @@ class M_json extends CI_Model {
 
     //json user
     function json_user() {
-        $this->datatables->select('user.id_user as ID,user.nama_lengkap as nama, user.username as username, user_kategori.kategori_user as kategori_user');
+        $this->datatables->select('user.id_user as ID,user.nama_lengkap as nama,user.username as username,user_kategori.kategori_user as kategori_user');
         $this->datatables->where('user.id_kategori_user != 1 ');
         $this->datatables->from('user');
-        $this->db->join('user_kategori', 'user.id_user = user_kategori.id_kategori_user', 'left');
+        $this->datatables->join('user_kategori', 'user.id_kategori_user = user_kategori.id_kategori_user');
         $this->datatables->add_column('view', '<a href="edit_user/$1"><button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i></button></a>
                                               <a href="hapus_user/$1"onclick="javascript:return confirm(\'Apakah anda yakin ingin menghapus data tersebut?\');"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button></a>', 'ID');
         return $this->datatables->generate();

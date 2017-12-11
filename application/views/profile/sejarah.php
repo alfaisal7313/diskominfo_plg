@@ -30,7 +30,7 @@
                     <ol>
                       <li>&nbsp;Bidang Pengelolaan Opini dan Pelayanan Informasi Publik</li>
                       <li>&nbsp;Bidang Pengelolaan Komunikasi Publik</li>
-                      <li>&nbsp;Bidang Teknologi Informatka dan Persandian</li>
+                      <li>&nbsp;Bidang Teknologi Informatika dan Persandian</li>
                       <li>&nbsp;Bidang Pengelolaan E-Government</li>
                     </ol>
 

@@ -5,14 +5,14 @@
                   <div class="col-md-12">
                        <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Form Edit Slide</h3>
+                            <h3 class="box-title">Form Edit Slideshow</h3>
                         </div>
                         <?php foreach($slide as $slide){ ?>
                         <form action="<?php echo base_url(). 'admin/slide/update_slide'; ?>" class="form-horizontal" method="post" enctype="multipart/form-data" style="padding: 30px;">
                             <div class="box-body">
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Tanggal</label>
-                                    <div class="col-sm-7">
+                                    <div class="col-sm-6">
                                         <div class="input-group date ml-2">
                                           <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
@@ -20,7 +20,7 @@
                                           <input type="text" name="tanggal" class="form-control" value="<?php date_default_timezone_set('Asia/Jakarta'); echo isset($_GET['tanggal'])?$tanggal:date('Y-m-d'); ?>" >
                                         </div>
                                     </div>
-                                    <label class="col-sm-1 control-label">Id Slide</label>
+                                    <label class="col-sm-2 control-label">Id Slideshow</label>
                                     <div class="col-sm-2">
                                         <div class="input-group date ml-2">
                                           <div class="input-group-addon">
@@ -32,26 +32,26 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="tiga" class="col-sm-2 control-label">Judul Slide</label>
+                                    <label for="tiga" class="col-sm-2 control-label">Judul Slideshow</label>
                                     <div class="col-sm-10">
                                         <div class="input-group date ml-2">
                                           <div class="input-group-addon">
                                             <i class="fa fa-pencil-square-o"></i>
                                           </div>
-                                          <input type="text" name="judul_slide" class="form-control" placeholder="Judul Slide" value="<?php echo $slide->judul ?>" <input type="text" class="form-control mt-3" name="level_user" placeholder="Kategori user">
+                                          <input type="text" name="judul_slide" class="form-control" placeholder="Judul Slideshow" value="<?php echo $slide->judul ?>" <input type="text" class="form-control mt-3" name="level_user" placeholder="Kategori user">
                                         </div>
                                         <p style="color:red; padding-left:40px;">* Jangan Pakai Karakter (koma, underscore)</p>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="tiga" class="col-sm-2 control-label">Keterangan Slide</label>
+                                    <label for="tiga" class="col-sm-2 control-label">Keterangan Slideshow</label>
                                     <div class="col-sm-10">
                                         <div class="input-group date ml-2">
                                           <div class="input-group-addon">
                                             <i class="fa  fa-bookmark"></i>
                                           </div>
-                                          <textarea type="text" name="keterangan" class="form-control" placeholder="Keterangan Slide" rows="2"><?php echo $slide->keterangan ?></textarea>
+                                          <textarea type="text" name="keterangan" class="form-control" placeholder="Keterangan Slideshow" rows="2"><?php echo $slide->keterangan ?></textarea>
                                         </div>
                                     </div>
                                 </div>

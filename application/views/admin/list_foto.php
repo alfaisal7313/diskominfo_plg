@@ -14,7 +14,7 @@
                 <table id="mytable" class="table table-bordered table-striped" style="width:100%;">
                     <thead>
                         <tr>
-                          <th>#</th>
+                          <th>No</th>
                           <th>Judul</th>
                           <th>Keterangan</th>
                           <th>Tanggal</th>

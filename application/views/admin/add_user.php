@@ -38,7 +38,7 @@
                   </div>
               </div>
 
-              <div class="form-group">
+              <!-- <div class="form-group">
               <label class="col-sm-4  control-label">Kategori User</label>
               <div class="col-sm-5">
                 <input type="text" id="input_kategor" class="form-control" name="level_user" placeholder="Tambah kategori user" disabled />
@@ -46,12 +46,10 @@
                   <input type="checkbox" id="check_kategori" />
                 </span>
               </div>
-            </div>
+            </div> -->
 
             <div class="form-group">
-                <div class="col-sm-4">
-
-                </div>
+                <label class="col-sm-4  control-label">Kategori User</label>
                 <div class="col-sm-5">
                   <?php
                   $dd_kategori_attribute = 'class="form-control select2" name="id_kategori_user" ';

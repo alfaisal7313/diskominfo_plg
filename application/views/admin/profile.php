@@ -13,7 +13,7 @@
               <hr>
 
             <!----- ------------------------- EDIT DATA MASTER user ------------------------- ----->
-            <h3 class="box-title margin text-center">Edit Profil</h3>
+            <h3 class="box-title margin text-center profile-data">Edit Profil</h3>
             <center> <div class="batas"> </div></center>
             <br/>
             <?php if ($this->session->flashdata('success')) { ?>
@@ -24,15 +24,15 @@
 
             <?php foreach ($user as $user) {
               ?>
-            <form action="<?php echo base_url(). 'admin/dashbord//update_profile'; ?>" class="form-horizontal" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">ID user </label>
+            <form action="<?php echo base_url(). 'admin/dashbord/update_profile'; ?>" class="form-horizontal" method="post" enctype="multipart/form-data">
+                <div class="form-group profile-data">
+                  <label class="col-sm-4 control-label ">ID user </label>
                     <div class="col-sm-5">
                       <input type="text" class="form-control" name="id" value="<?php echo $user->id_user; ?>" readonly>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group profile-data">
                   <label class="col-sm-4 control-label">Nama Lengkap *</label>
                     <div class="col-sm-5">
                       <input type="text" class="form-control" name="nama_lengkap" value="<?php echo $user->nama_lengkap; ?>" required oninvalid="this.setCustomValidity('Nama jangan kosong')" oninput="setCustomValidity('')">
@@ -41,15 +41,15 @@
 
               <?php if ($this->session->userdata("id_kategori_user") == "1") {
                 echo '<style media="screen">
-                    .username-data{ display:block;}
+                    .profile-data{ display:block;}
                 </style>';
               }else {
                 echo '<style media="screen">
-                    .username-data{ display:none;}
+                    .profile-data{ display:none;}
                 </style>';
               } ?>
 
-                <div class="form-group username-data">
+                <div class="form-group profile-data">
                   <label class="col-sm-4 control-label">Username*</label>
                     <div class="col-sm-5">
                       <input type="text" class="form-control" name="username" value="<?php echo $user->username; ?>" required oninvalid="this.setCustomValidity('Username jangan kosong')" oninput="setCustomValidity('')">
@@ -61,9 +61,9 @@
               <br/>
 
               <div class="form-group">
-                <label class="col-sm-4 control-label">Password</label>
+                <label class="col-sm-4 control-label">New Password</label>
                   <div class="col-sm-5">
-                    <input type="password" id="password1 "class="form-control">
+                    <input type="password" id="password1" class="form-control" autocomplete="off">
                     <a class="text-red">*ubah password secara berkala demi menjaga keamanan</a>
                   </div>
               </div>
@@ -71,7 +71,7 @@
               <div class="form-group">
                 <label class="col-sm-4 control-label">Konfirmasi Password</label>
                   <div class="col-sm-5">
-                    <input type="password" id="password2 "class="form-control" name="password">
+                    <input type="password" id="password2" class="form-control" name="password">
                   </div>
               </div>
 
@@ -80,6 +80,7 @@
                   document.getElementById("password1").onchange = validatePassword;
                   document.getElementById("password2").onchange = validatePassword;
                 }
+
                 function validatePassword(){
                   var pass2=document.getElementById("password2").value;
                   var pass1=document.getElementById("password1").value;

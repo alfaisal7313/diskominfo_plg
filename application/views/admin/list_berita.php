@@ -14,10 +14,10 @@
                 <table id="mytable" class="table table-bordered table-striped" style="width:100%;">
                     <thead>
                         <tr>
-                          <th>#</th>
+                          <th>No</th>
                           <th>Judul</th>
                           <th>Tanggal</th>
-                          <th>kategori</th> -->
+                          <th>kategori</th>
                           <th>Gambar</th>
                           <th>Action</th>
                         </tr>
@@ -33,38 +33,55 @@
 </div>
 <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
-   var save_method; //for save method string
-   var table;
 
-   $(document).ready(function() {
-       //datatables
-       table = $('#mytable').DataTable({
-           "processing": true, //Feature control the processing indicator.
-           "serverSide": true, //Feature control DataTables' server-side processing mode.
-           "order": [[ 0, 'desc']], //Initial no order.
-           // Load data for the table's content from an Ajax source
-           "ajax": {
-               "url": '<?php echo site_url('admin/berita/json_berita'); ?>',
-               "type": "POST"
-           },
-           //Set column definition initialisation properties.
-           "columns": [
-             {
-                 "data": "ID",
-                 "orderable": false
-             },
-             {"data": "judul"},
-             {"data": "tanggal"},
-             {"data": "kategori"},
-             {"data": "view_image"},
-             {"data": "view","class": "text-center"},
-           ],
-       });
+  $(document).ready(function() {
+    $.fn.dataTableExt.oApi.fnPagingInfo = function(oSettings)
+    {
+      return {
+        "iStart": oSettings._iDisplayStart,
+        "iEnd": oSettings.fnDisplayEnd(),
+        "iLength": oSettings._iDisplayLength,
+        "iTotal": oSettings.fnRecordsTotal(),
+        "iFilteredTotal": oSettings.fnRecordsDisplay(),
+        "iPage": Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength),
+        "iTotalPages": Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
+      };
+    };
 
-      table.on( 'order.dt search.dt', function () {
-          table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-              cell.innerHTML = i+1;
-          } );
-      } ).draw();
-   });
+    var t = $("#mytable").dataTable({
+
+      oLanguage: {
+        sProcessing: "loading..."
+      },
+      processing: true,
+      serverSide: true,
+      ajax: {
+        "url": '<?php echo site_url('admin/berita/json_berita'); ?>',
+        "type": "POST"
+      },
+
+      columns: [
+     {
+           "data": "ID",
+           "orderable": false
+       },
+       {"data": "judul"},
+       {"data": "tanggal"},
+       {"data": "kategori"},
+       {"data": "view_image"},
+       {"data": "view","class": "text-center"},
+     ],
+      order: [[0, 'desc']],
+      rowCallback: function(row, data, iDisplayIndex) {
+        var info = this.fnPagingInfo();
+        var page = info.iPage;
+        var length = info.iLength;
+        var index = page * length + (iDisplayIndex + 1);
+        $('td:eq(0)', row).html(index);
+      }
+    });
+  });
+  $('#confirm-delete').on('show.bs.modal', function(e) {
+    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+  });
 </script>

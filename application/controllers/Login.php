@@ -6,8 +6,12 @@ class Login extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Auth_model');
-        $this->load->library('Form_validation');
-        $this->load->helper(array('Form', 'String'));
+        $this->load->library('Form_validation','session');
+        $this->load->helper(array('Form', 'String', 'file','form_helper'));
+
+        // if ($this->session->userdata('logged')) {
+        //     redirect(base_url("admin/dashbord"));
+        // }
     }
 
     public function index(){

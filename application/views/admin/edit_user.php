@@ -89,7 +89,7 @@
                 <br>
 
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">  </label>
+                  <label class="col-sm-4 control-label"></label>
                   <div class="col-sm-5">
                     <a href="<?php echo base_url('admin/user/list_user') ?>" class="btn btn-primary pull-left"> Kembali</a>
                     <button type="submit" name="submit" class="btn btn-info pull-right"><i class="glyphicon glyphicon-floppy-disk"></i> Simpan</button>
